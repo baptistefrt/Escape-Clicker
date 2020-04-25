@@ -13,12 +13,6 @@
 
     }
 
-    function myFunction(event) {
-    var x = event.keyCode;
-    if (x == 27) { // 27 is the ESC key
-        alert ("You pressed the Escape key!");
-        }
-    }
     var escapeCount = 0;
     var autoClicker = 0;
     var cost_printf = 0;
@@ -44,9 +38,17 @@
         <link rel="stylesheet" type="text/css" href="./css/view.css">
     </head>
 
-    <body>
+    <body onkeydown="myFunction(event)">
+        <script>
+            function myFunction(event) {
+            var x = event.keyCode;
+            if (x == 27) { // 27 is the ESC key
+                escapeCount++;
+                }
+            }
+        </script>
         <div id ="clockover" class="prompt">
-            <a href="#" class="picture" onclick="add()"><img src="res/clock.png"></a>
+            <a href="#" class="picture" onclick="add()"><img src="res/Escape-key.jpg"></a>
             <br><br>
             You got:
             <input type="text" id ="text" disabled style= text-align:center>
@@ -87,9 +89,6 @@
         <p id="cost42sh">It'll Cost 0 Hours</p>
         <p id="amount42sh">You Own 0 42sh</p>
         <br><br>
-
-
-        <input type="text" onkeydown="myFunction(event)">
 
         <script>
             function save() {
