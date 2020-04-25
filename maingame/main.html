@@ -1,0 +1,139 @@
+<script>
+    function update() {
+        document.getElementById('text').value = escapeCount;
+        document.title = escapeCount + " Hours";
+        document.getElementById('amountautoClicker').innerHTML = "You Own " + autoClicker + " autoClicker";
+        document.getElementById('costautoClicker').innerHTML = "It'll Cost " + cost_printf + " Hours";
+        document.getElementById('amountMinishell1').innerHTML = "You Own " + my_minishell1 + " Minishell1";
+        document.getElementById('costMinishell1').innerHTML = "It'll Cost " + cost_minishell1 + " Hours";
+        document.getElementById('amountMy_ls').innerHTML = "You Own " + my_ls + " My_ls";
+        document.getElementById('costMy_ls').innerHTML = "It'll Cost " + cost_ls + " Hours";
+        document.getElementById('amount42sh').innerHTML = "You Own " + my_42sh + " 42sh";
+        document.getElementById('cost42sh').innerHTML = "It'll Cost " + cost_42sh + " Hours";
+
+    }
+
+    function myFunction(event) {
+    var x = event.keyCode;
+    if (x == 27) { // 27 is the ESC key
+        alert ("You pressed the Escape key!");
+        }
+    }
+    var escapeCount = 0;
+    var autoClicker = 0;
+    var cost_printf = 0;
+    var my_minishell1 = 0;
+    var cost_minishell1 = 0;
+    var my_ls = 0;
+    var cost_ls = 0;
+    var my_42sh = 0;
+    var cost_42sh = 0;
+
+    function timer() {
+        escapeCount = escapeCount + autoClicker;
+        escapeCount = escapeCount + (my_ls * 2);
+        escapeCount = escapeCount + (my_minishell1 * 10);
+        escapeCount = escapeCount + (my_42sh * 1000);
+        update()
+    }
+    setInterval(timer, 1000)
+</script>
+<html>
+    <head>
+        <title>Khalas les credits</title>
+        <link rel="stylesheet" type="text/css" href="./css/view.css">
+    </head>
+
+    <body>
+        <div id ="clockover" class="prompt">
+            <a href="#" class="picture" onclick="add()"><img src="res/clock.png"></a>
+            <br><br>
+            You got:
+            <input type="text" id ="text" disabled style= text-align:center>
+            <script>
+                function add() {
+                    escapeCount = escapeCount + 1
+                    document.getElementById('text').value = escapeCount;
+                    document.title = escapeCount + " Hours";
+                    update()
+                }
+            </script>
+            Hours
+            <br><br>
+        </div>
+
+        <div id="page" class="buy_menu">
+        <button><a href="#" class="button" onclick="save()">Save</a></button>
+        <button><a href="#" class="button" onclick="load()">Load</a></button>
+        <br><br>
+
+        <button><a href="#" class="button" onClick="buyautoClicker()">autoClicker</a></button>
+        <p id="costautoClicker"> It'll Cost 0 Hours</p>
+        <p id="amountautoClicker"> You Own 0 autoClicker</p>
+        <br><br>
+
+        <button><a href="#" class="button" onClick="buyMy_ls()">my_ls</a></button>
+        <p id="costMy_ls">It'll Cost 0 Hours</p>
+        <p id="amountMy_ls">You Own 0 My_ls</p>
+        <br><br>
+
+
+        <button><a href="#" class="button" onClick="buyMy_minishell1()">minishell1</a></button>
+        <p id="costMinishell1">It'll Cost 0 Hours</p>
+        <p id="amountMinishell1">You Own 0 Minishell1</p>
+        <br><br>
+
+        <button><a href="#" class="button" onClick="buyMy_42sh()">42sh</a></button>
+        <p id="cost42sh">It'll Cost 0 Hours</p>
+        <p id="amount42sh">You Own 0 42sh</p>
+        <br><br>
+
+
+        <input type="text" onkeydown="myFunction(event)">
+
+        <script>
+            function save() {
+                localStorage.setItem("escapeCount", escapeCount);
+            }
+            function load() {
+                escapeCount = localStorage.getItem("escapeCount");
+                escapeCount = parseInt(escapeCount);
+                document.getElementById('text').value = escapeCount;
+                document.title = escapeCount + " Hours";
+            }
+            function buyautoClicker() {
+                if (escapeCount >= ((autoClicker + 1) * 3)) {
+                    escapeCount = escapeCount - ((autoClicker + 1) * 3);
+                    autoClicker = autoClicker + 1;
+                    cost_printf = (autoClicker + 1) * 3
+                    update()
+                }
+            }
+            function buyMy_ls() {
+                if (escapeCount >= ((my_ls + 1) * 5)) {
+                    escapeCount = escapeCount - ((my_ls + 1) * 5);
+                    my_ls = my_ls + 1;
+                    cost_ls = (my_ls + 1) * 5
+                    update()
+                }
+            }
+            function buyMy_minishell1() {
+                if (escapeCount >= ((my_minishell1 + 1) * 10)) {
+                    escapeCount = escapeCount - ((my_minishell1 + 1) * 10);
+                    my_minishell1 = my_minishell1 + 1;
+                    cost_minishell1 = (my_minishell1 + 1) * 10
+                    update()
+                }
+            }
+            function buyMy_42sh() {
+                if (escapeCount >= ((my_42sh + 1) * 100)) {
+                    escapeCount = (escapeCount - (my_42sh + 1) * 100);
+                    my_42sh = my_42sh + 1;
+                    cost_42sh = (my_42sh + 1) * 10
+                    update()
+                }
+            }
+        </script>
+        </div>
+    </body>
+</html>

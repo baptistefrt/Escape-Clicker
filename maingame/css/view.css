@@ -1,0 +1,53 @@
+.buy_menu {
+    size: 1.3em;
+    position: fixed;
+    bottom: 260;
+    left: 1400;
+    width: 200px;
+}
+
+.prompt {
+    size: 1.3em;
+    position: fixed;
+    bottom: 440;
+    left: 600;
+    width: 200px;
+}
+
+.picture {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 500;
+    left: 600;
+    width: 200px;
+}
+
+#page {
+    font-family: 'Courier New', Courier, serif;
+    font-size: 1.0em;
+    width: 1500px;
+}
+
+body {
+    background-color: #5ebdec;
+    color: blue;
+}
+
+body button {
+    color: royalblue;
+}
+
+.button {
+    background-color: #555555;
+    color: white;
+    padding: 14px 40px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+#header {
+    height: 50%;
+}
