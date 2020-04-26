@@ -4,30 +4,30 @@
         document.title = escapeCount + " Hours";
         document.getElementById('amountautoClicker').innerHTML = "You Own " + autoClicker + " autoClicker";
         document.getElementById('costautoClicker').innerHTML = "It'll Cost " + cost_printf + " Hours";
-        document.getElementById('amountMinishell1').innerHTML = "You Own " + my_minishell1 + " Minishell1";
-        document.getElementById('costMinishell1').innerHTML = "It'll Cost " + cost_minishell1 + " Hours";
-        document.getElementById('amountMy_ls').innerHTML = "You Own " + my_ls + " My_ls";
-        document.getElementById('costMy_ls').innerHTML = "It'll Cost " + cost_ls + " Hours";
-        document.getElementById('amount42sh').innerHTML = "You Own " + my_42sh + " 42sh";
-        document.getElementById('cost42sh').innerHTML = "It'll Cost " + cost_42sh + " Hours";
+        document.getElementById('amountMinishell1').innerHTML = "You Own " + factory + " Factory";
+        document.getElementById('costMinishell1').innerHTML = "It'll Cost " + cost_factory + " Hours";
+        document.getElementById('amountsecte').innerHTML = "You Own " + secte + " secte";
+        document.getElementById('costsecte').innerHTML = "It'll Cost " + cost_secte + " Hours";
+        document.getElementById('amount42sh').innerHTML = "You Own " + ubisoft + " Ubisoft";
+        document.getElementById('cost42sh').innerHTML = "It'll Cost " + cost_ubisoft + " Hours";
 
     }
 
     var escapeCount = 0;
     var autoClicker = 0;
     var cost_printf = 0;
-    var my_minishell1 = 0;
-    var cost_minishell1 = 0;
-    var my_ls = 0;
-    var cost_ls = 0;
-    var my_42sh = 0;
-    var cost_42sh = 0;
+    var factory = 0;
+    var cost_factory = 0;
+    var secte = 0;
+    var cost_secte = 0;
+    var ubisoft = 0;
+    var cost_ubisoft = 0;
 
     function timer() {
         escapeCount = escapeCount + autoClicker;
-        escapeCount = escapeCount + (my_ls * 2);
-        escapeCount = escapeCount + (my_minishell1 * 10);
-        escapeCount = escapeCount + (my_42sh * 1000);
+        escapeCount = escapeCount + (secte * 2);
+        escapeCount = escapeCount + (factory * 10);
+        escapeCount = escapeCount + (ubisoft * 1000);
         update()
     }
     setInterval(timer, 1000)
@@ -74,18 +74,18 @@
         <p id="amountautoClicker"> You Own 0 autoClicker</p>
         <br><br>
 
-        <button><a href="#" class="button" onClick="buyMy_ls()">my_ls</a></button>
-        <p id="costMy_ls">It'll Cost 0 Hours</p>
-        <p id="amountMy_ls">You Own 0 My_ls</p>
+        <button><a href="#" class="button" onClick="buysecte()">Secte</a></button>
+        <p id="costsecte">It'll Cost 0 Hours</p>
+        <p id="amountsecte">You Own 0 secte</p>
         <br><br>
 
 
-        <button><a href="#" class="button" onClick="buyMy_minishell1()">minishell1</a></button>
+        <button><a href="#" class="button" onClick="buyfactory()">Factory</a></button>
         <p id="costMinishell1">It'll Cost 0 Hours</p>
-        <p id="amountMinishell1">You Own 0 Minishell1</p>
+        <p id="amountMinishell1">You Own 0 Factory</p>
         <br><br>
 
-        <button><a href="#" class="button" onClick="buyMy_42sh()">42sh</a></button>
+        <button><a href="#" class="button" onClick="buyubisoft()">Ubisoft</a></button>
         <p id="cost42sh">It'll Cost 0 Hours</p>
         <p id="amount42sh">You Own 0 42sh</p>
         <br><br>
@@ -108,27 +108,27 @@
                     update()
                 }
             }
-            function buyMy_ls() {
-                if (escapeCount >= ((my_ls + 1) * 5)) {
-                    escapeCount = escapeCount - ((my_ls + 1) * 5);
-                    my_ls = my_ls + 1;
-                    cost_ls = (my_ls + 1) * 5
+            function buysecte() {
+                if (escapeCount >= ((secte + 1) * 5)) {
+                    escapeCount = escapeCount - ((secte + 1) * 5);
+                    secte = secte + 1;
+                    cost_secte = (secte + 1) * 5
                     update()
                 }
             }
-            function buyMy_minishell1() {
-                if (escapeCount >= ((my_minishell1 + 1) * 10)) {
-                    escapeCount = escapeCount - ((my_minishell1 + 1) * 10);
-                    my_minishell1 = my_minishell1 + 1;
-                    cost_minishell1 = (my_minishell1 + 1) * 10
+            function buyfactory() {
+                if (escapeCount >= ((factory + 1) * 10)) {
+                    escapeCount = escapeCount - ((factory + 1) * 10);
+                    factory = factory + 1;
+                    cost_factory = (factory + 1) * 10
                     update()
                 }
             }
-            function buyMy_42sh() {
-                if (escapeCount >= ((my_42sh + 1) * 100)) {
-                    escapeCount = (escapeCount - (my_42sh + 1) * 100);
-                    my_42sh = my_42sh + 1;
-                    cost_42sh = (my_42sh + 1) * 10
+            function buyubisoft() {
+                if (escapeCount >= ((ubisoft + 1) * 100)) {
+                    escapeCount = (escapeCount - (ubisoft + 1) * 100);
+                    ubisoft = ubisoft + 1;
+                    cost_ubisoft = (ubisoft + 1) * 10
                     update()
                 }
             }
