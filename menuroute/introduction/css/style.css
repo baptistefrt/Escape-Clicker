@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+body {
+  font-family: PT Sans,Helvetica,Arial,sans-serif;
+  -ms-scroll-chaining: none;
+  /* Prevents Metro from swiping to the next tab or app. */
+}
+.hero {
+  background-color: #000000;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.tree-slider {
+  position: fixed;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.tree-slider #my-tree:checked ~ .slider {
+  -webkit-transform: translateX(0vw);
+          transform: translateX(0vw);
+}
+.tree-slider #my-tree:checked ~ nav label {
+  display: none;
+}
+.tree-slider #my-tree:checked ~ nav label.my-tree {
+  display: initial;
+}
+.tree-slider #my-tree:checked ~ nav .buttons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tree-slider #my-tree:checked ~ nav .buttons label {
+  display: inline-block;
+}
+.tree-slider #my-tree:checked ~ nav .buttons label[for="my-tree"] {
+  cursor: default;
+  opacity: 1;
+}
+.tree-slider #profile:checked ~ .slider {
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+}
+.tree-slider #profile:checked ~ nav label {
+  display: none;
+}
+.tree-slider #profile:checked ~ nav label.profile {
+  display: initial;
+}
+.tree-slider #profile:checked ~ nav .buttons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tree-slider #profile:checked ~ nav .buttons label {
+  display: inline-block;
+}
+.tree-slider #profile:checked ~ nav .buttons label[for="profile"] {
+  cursor: default;
+  opacity: 1;
+}
+.tree-slider #people-select:checked ~ .slider {
+  -webkit-transform: translateX(-200vw);
+          transform: translateX(-200vw);
+}
+.tree-slider #people-select:checked ~ nav label {
+  display: none;
+}
+.tree-slider #people-select:checked ~ nav label.people-select {
+  display: initial;
+}
+.tree-slider #people-select:checked ~ nav .buttons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tree-slider #people-select:checked ~ nav .buttons label {
+  display: inline-block;
+}
+.tree-slider #people-select:checked ~ nav .buttons label[for="people-select"] {
+  cursor: default;
+  opacity: 1;
+}
+.tree-slider #leaves:checked ~ .slider {
+  -webkit-transform: translateX(-300vw);
+          transform: translateX(-300vw);
+}
+.tree-slider #leaves:checked ~ nav label {
+  display: none;
+}
+.tree-slider #leaves:checked ~ nav label.leaves {
+  display: initial;
+}
+.tree-slider #leaves:checked ~ nav .buttons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tree-slider #leaves:checked ~ nav .buttons label {
+  display: inline-block;
+}
+.tree-slider #leaves:checked ~ nav .buttons label[for="leaves"] {
+  cursor: default;
+  opacity: 1;
+}
+
+input[type="radio"] {
+  position: fixed;
+  top: -9999px;
+}
+
+label {
+  cursor: pointer;
+  opacity: 0.5;
+}
+label:hover {
+  opacity: 0.75;
+}
+
+nav {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  height: 4em;
+  text-align: center;
+}
+nav .done {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  -webkit-transition: text-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  transition: text-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, -webkit-transform 0.3s ease;
+}
+nav .done.highlight {
+  opacity: 1;
+  text-shadow: 0 0 1em;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+nav .buttons {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  color: white;
+  bottom: 1.8em;
+}
+nav .buttons label {
+  font-size: 2em;
+  width: 9mm;
+}
+
+.slider {
+  width: 400vw;
+  position: fixed;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  color: white;
+}
+
+.slide {
+  text-align: center;
+  float: left;
+  height: 100vh;
+  width: 100vw;
+}
+.slide img {
+  display: block;
+  max-height: 70%;
+  max-width: 100%;
+  margin: auto;
+}
+.slide h2 {
+  display: inline-block;
+  font-size: 5vh;
+  font-weight: normal;
+  height: 50vh;
+  width: 50vw;
+  text-align: left;
+  margin: 0 2em;
+}
+
+#my-tree-slide {
+  background-color: transparent !important;
+}
+
+#profile-slide {
+  background-color: transparent !important;
+}
+
+#people-select-slide {
+  background-color: transparent !important;
+}
+
+#leaves-slide {
+  background-color: transparent !important;
+}
+#leaves-slide h2 {
+  margin-top: 1em;
+  line-height: 100vh;
+  vertical-align: middle;
+}
+
+
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #4d4d4d;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #2c3341;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
