@@ -8,6 +8,11 @@
     width: 200px;
 }
 
+.notes {
+    text-decoration:none;
+    color : rgb(170, 170, 235);
+}
+
 .prompt {
     size: 1.3em;
     position: absolute;
