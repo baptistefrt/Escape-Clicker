@@ -10,6 +10,8 @@
         document.getElementById('costsecte').innerHTML = "It'll Cost " + cost_secte + " Hours";
         document.getElementById('amount42sh').innerHTML = "You Own " + ubisoft + " Ubisoft";
         document.getElementById('cost42sh').innerHTML = "It'll Cost " + cost_ubisoft + " Hours";
+        document.getElementById('amountstudent').innerHTML = "You Own " + student + " Students";
+        document.getElementById('coststudent').innerHTML = "It'll Cost " + cost_student + " Hours";
 
     }
 
@@ -22,12 +24,15 @@
     var cost_secte = 0;
     var ubisoft = 0;
     var cost_ubisoft = 0;
+    var student = 0;
+    var cost_student = 0;
 
     function timer() {
         escapeCount = escapeCount + autoClicker;
         escapeCount = escapeCount + (secte * 2);
         escapeCount = escapeCount + (factory * 10);
         escapeCount = escapeCount + (ubisoft * 1000);
+        escapeCount = escapeCount + (student * 1500);
         update()
     }
     setInterval(timer, 1000)
@@ -67,28 +72,33 @@
         <div id="page" class="buy_menu">
         <button><a href="#" class="button" onclick="save()">Save</a></button>
         <button><a href="#" class="button" onclick="load()">Load</a></button>
-        <br><br>
+        <br>
 
         <button><a href="#" class="button" onClick="buyautoClicker()">autoClicker</a></button>
         <p id="costautoClicker"> It'll Cost 0 Hours</p>
         <p id="amountautoClicker"> You Own 0 autoClicker</p>
-        <br><br>
+        <br>
 
         <button><a href="#" class="button" onClick="buysecte()">Secte</a></button>
         <p id="costsecte">It'll Cost 0 Hours</p>
         <p id="amountsecte">You Own 0 secte</p>
-        <br><br>
+        <br>
 
 
         <button><a href="#" class="button" onClick="buyfactory()">Factory</a></button>
         <p id="costMinishell1">It'll Cost 0 Hours</p>
         <p id="amountMinishell1">You Own 0 Factory</p>
-        <br><br>
+        <br>
 
         <button><a href="#" class="button" onClick="buyubisoft()">Ubisoft</a></button>
         <p id="cost42sh">It'll Cost 0 Hours</p>
         <p id="amount42sh">You Own 0 42sh</p>
-        <br><br>
+        <br>
+
+        <button><a href="#" class="button" onClick="buystudent()">Students</a></button>
+        <p id="coststudent">It'll Cost 0 Hours</p>
+        <p id="amountstudent">You Own 0 Student</p>
+        <br>
 
         <script>
             function save() {
@@ -129,6 +139,14 @@
                     escapeCount = (escapeCount - (ubisoft + 1) * 100);
                     ubisoft = ubisoft + 1;
                     cost_ubisoft = (ubisoft + 1) * 10
+                    update()
+                }
+            }
+            function buystudent() {
+                if (escapeCount >= ((student + 1) * 150)) {
+                    escapeCount = (escapeCount - (student + 1) * 150);
+                    student = student + 1;
+                    cost_student = (student + 1) * 30
                     update()
                 }
             }
