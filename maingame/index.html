@@ -1,55 +1,68 @@
 <html>
 <head>
-    <title>Escape Clicker</title>
+    <title>Khalas les credits</title>
     <link rel="stylesheet" type="text/css" href="./css/view.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script>
+        // Load app.js script after document has rendered.
+        var script = document.createElement('script');
+        script.src = 'js/app.js';
+        script.type = 'text/javascript';
+        document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
 </head>
 
 <body onkeydown="myFunction(event)">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Buy Menu</span>
-            <div id="page">
-                <button class="mdl-button mdl-js-ripple-effect notes" onclick="save()">Save</button>
-                <button class="mdl-button mdl-js-ripple-effect notes"onclick="load()">Load</button>
-                <br>
-        
-                <button class="mdl-button mdl-js-ripple-effect notes" onClick="buyautoClicker()">autoClicker</button>
-                <p id="costautoClicker"> It'll Cost 0 Escape</p>
-                <p id="amountautoClicker"> You Own 0 autoClicker</p>
-                <br>
-        
-                <button class="mdl-button mdl-js-ripple-effect notes" onClick="buysecte()">Secte</button>
-                <p id="costsecte">It'll Cost 0 Escape</p>
-                <p id="amountsecte">You Own 0 secte</p>
-                <br>
-        
-        
-                <button class="mdl-button mdl-js-ripple-effect notes"onClick="buyfactory()">Factory</button>
-                <p id="costMinishell1">It'll Cost 0 Escape</p>
-                <p id="amountMinishell1">You Own 0 Factory</p>
-                <br>
-        
-                <button class="mdl-button mdl-js-ripple-effect notes" onClick="buyubisoft()">Ubisoft</button>
-                <p id="cost42sh">It'll Cost 0 Escape</p>
-                <p id="amount42sh">You Own 0 Ubisoft</p>
-                <br>
-        
-                <button class="mdl-button mdl-js-ripple-effect notes" onClick="buystudent()">Students</button>
-                <p id="coststudent">It'll Cost 0 Escape</p>
-                <p id="amountstudent">You Own 0 Students</p>
-                <br>
-        
-                <button class="mdl-button mdl-js-ripple-effect notes"  onClick="buyfortnite()">Fortnite's player</button>
-                <p id="costfortnite">It'll Cost 0 Escape</p>
-                <p id="amountfortnite">You Own 0 Fortnite's player</p>
-                <br>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+                <div class="contg">
+                    <span class="mdl-layout-title">Buy Menu</span>
+                    <div id="page">
+                        <button class="mdl-button mdl-js-ripple-effect notes" onclick="save()">Save</button>
+                        <button class="mdl-button mdl-js-ripple-effect notes"onclick="load()">Load</button>
+                        <br>
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes" onClick="buyautoClicker()">autoClicker</button>
+                        <p id="costautoClicker"> It'll Cost 0 Escape</p>
+                        <p id="amountautoClicker"> You Own 0 autoClicker</p>
+                        <br>
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes" onClick="buysecte()">Secte</button>
+                        <p id="costsecte">It'll Cost 0 Escape</p>
+                        <p id="amountsecte">You Own 0 secte</p>
+                        <br>
+                
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes"onClick="buyfactory()">Factory</button>
+                        <p id="costMinishell1">It'll Cost 0 Escape</p>
+                        <p id="amountMinishell1">You Own 0 Factory</p>
+                        <br>
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes" onClick="buyubisoft()">Ubisoft</button>
+                        <p id="cost42sh">It'll Cost 0 Escape</p>
+                        <p id="amount42sh">You Own 0 Ubisoft</p>
+                        <br>
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes" onClick="buystudent()">Students</button>
+                        <p id="coststudent">It'll Cost 0 Escape</p>
+                        <p id="amountstudent">You Own 0 Students</p>
+                        <br>
+                
+                        <button class="mdl-button mdl-js-ripple-effect notes"  onClick="buyfortnite()">Fortnite's player</button>
+                        <p id="costfortnite">It'll Cost 0 Escape</p>
+                        <p id="amountfortnite">You Own 0 Fortnite's player</p>
+                        <br>
+                </div>
             </div>
         </div>
 
     <main class="mdl-layout__content">
         <div class="area" >
+            <canvas id="canvas">Your browser does not support the 'canvas' element.</canvas>
             <ul class="circles">
                     <li></li>
                     <li></li>
@@ -65,15 +78,20 @@
         </div >
         <div class="page-content">
             <div id ="clockover" class="prompt">
-                <br><br><br>
                 <div class="mdl-textfield">
-                    <a href="#" class="picture" onclick="add()"><img width="100%" height="20%"src="res/Escape-key.gif"></a>
+                    <img style="animation:slide 3s ease-in-out infinite alternate" width="100%" height="20%"src="res/Escape-key.gif">
                     <h2>You got:</h2>
                     <input type="text" id ="text" disabled style="text-align:center">
                     <h2>Escape</h2>
                 </div>
                 <!-- <input type="text" id ="text" disabled style= text-align:center> -->
                 <br><br>
+                <div id="player">
+                    <iframe allowtransparency="true" width="0" height="0" src="https://www.youtube.com/embed/iJG8Kv6qO2U?autoplay=1&showinfo=0&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="player30">
+                    <iframe allowtransparency="true" width="0" height="0" src="https://www.youtube.com/embed/i3VnDE86ZRuE?autoplay=1&showinfo=0&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </main>

@@ -1,3 +1,4 @@
+
 function update() {
     document.getElementById('text').value = escapeCount;
     document.title = escapeCount + " Escape";
@@ -13,10 +14,17 @@ function update() {
     document.getElementById('coststudent').innerHTML = "It'll Cost " + cost_student + " Escape";
     document.getElementById('amountfortnite').innerHTML = "You Own " + fortnite + " Fortnite's player";
     document.getElementById('costfortnite').innerHTML = "It'll Cost " + cost_fortnite + " Escape";
-
+    if (escapeCount > 30) {
+        document.getElementById("player30").disabled = true;
+    }
+    if (escapeCount > 90000000) {
+        document.getElementById("player").disabled = false;
+        loop()
+    }
 }
 
 var escapeCount = 0;
+var oldCount = 0;
 var autoClicker = 0;
 var cost_printf = 0;
 var factory = 0;
@@ -42,10 +50,12 @@ function timer() {
 setInterval(timer, 1000)
 
 function myFunction(event) {
+    document.getElementById("player").disabled = true;
+    document.getElementById("player30").disabled = false;
     var x = event.keyCode;
     if (x == 27) { // 27 is the ESC key
         escapeCount++;
-        }
+    }
 }
 
 function save() {
